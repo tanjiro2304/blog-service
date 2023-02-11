@@ -2,8 +2,10 @@ package com.vn.blog.blogservice.converter;
 
 
 import com.vn.blog.blogservice.dto.BlogPost;
+import com.vn.blog.blogservice.dto.Image;
 import com.vn.blog.blogservice.dto.User;
 import com.vn.blog.blogservice.models.BlogPostEntity;
+import com.vn.blog.blogservice.models.ImageEntity;
 import com.vn.blog.blogservice.models.UserEntity;
 
 import java.io.IOException;
@@ -28,6 +30,12 @@ public class DtoConvertUtils {
         return User.builder().
                 userId(userEntity.getUserId()).
                 userName(userEntity.getUserName()).build();
+    }
+
+    public static Image convertImageEntityToDTO(ImageEntity imageEntity){
+        return Image.builder().id(imageEntity.getImageId())
+                .image(imageEntity.getImage())
+                .build();
     }
 
     public static String convertClobToString(Clob clob) throws SQLException, IOException {
