@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     UserRepo userRepo;
 
     @Override
-    public User getUserById(Long id) {
+    public User findUserById(Long id) {
         if(id == null){
             throw new UserNotFoundException("User Id not valid Please Try Again");
         }
